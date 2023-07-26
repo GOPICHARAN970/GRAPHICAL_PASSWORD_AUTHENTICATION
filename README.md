@@ -16,23 +16,19 @@ Objective: In this method, the user is required to select one image category (le
   attacks, etc.
 
   ## Technology stack
-  1. PHP
-  
-  2. JAVA SCRIPT
-  
-  3. MYSQL
-  
-  4. HTML
-  
-  5. CSS
-
+  1. Xampp server
+  2. Vs code
+  3. Php
+  4. Java script
+  5. My sql
+  6. Html
+  7. Css
+    
   ## Future scope
   1. Convert selected sequence of images to a rememberable sentence, and prompt questions based on that sentence during login
-
-  2. Captcha based Password Authentication 
-
+  2. Captcha based Password Authentication
   3. Develop Extension to add graphical password for any website
+  4. Change parameters according to password strength selected by the user 
 
-  4. Change parameters according to password strength selected by the user
   
 
