@@ -16,8 +16,8 @@ Objective: In this method, the user is required to select one image category (le
   attacks, etc.
 
   ## Technology stack
- #### 1. [Xampp server] (https://www.apachefriends.org/download.html)
- #### 2. [Vs code] (https://code.visualstudio.com/download)
+  1. [Xampp server](https://www.apachefriends.org/download.html)
+  2. [Vs code](https://code.visualstudio.com/download)
   3. Php
   4. Java script
   5. My sql
