@@ -1,107 +1,13 @@
-const signUpBtnLink = document.querySelector('.signUpBtn-link');
-const signInBtnLink = document.querySelector('.signInBtn-link');
 const wrapper = document.querySelector('.wrapper');
-const forgotLink = document.querySelector('#forgotLink');
-const signUpCategory = document.querySelector('.form-wrapper.sign-up select');
-const signInCategory = document.querySelector('.form-wrapper.sign-in select');
+const ResetCategory = document.querySelector('.form-wrapper.reset-pswd select');
 
-signUpBtnLink.addEventListener('click', () => {
-    wrapper.classList.toggle('active');
-});
-
-signInBtnLink.addEventListener('click', () => {
-    wrapper.classList.toggle('active');
-});
-
-signUpCategory.addEventListener('change', () => {
-    const selectedCategory = signUpCategory.value;
-   let t="Up";
-    displayCategoryWindow(selectedCategory,t);
-});
-
-signInCategory.addEventListener('change', () => {
-    const selectedCategory = signInCategory.value;
-    let t="In";
-    displayCategoryWindow(selectedCategory,t);
+ResetCategory.addEventListener('change', () => {
+    const selectedCategory = ResetCategory.value;
+    displayCategoryWindow(selectedCategory);
 });
 
 
-
-forgotLink.addEventListener('click', () => {
-    const windowWidth = 700;
-    const windowHeight = 500;
-    const windowLeft = (window.screen.availWidth - windowWidth) / 2;
-    const windowTop = (window.innerHeight - windowHeight) / 2 + 100;
-
-    const forgotWindow = window.open('', '_blank', `width=${windowWidth},height=${windowHeight},left=${windowLeft},top=${windowTop}`);
-    forgotWindow.document.write(`
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                font-family: Arial, sans-serif;
-                //text-align: center;
-                background-color: #f5f5f5;
-            }
-            h1 {
-                margin-top: 0;
-                color: #333;
-            }
-            p {
-                margin-bottom: 20px;
-                color: #777;
-            }
-            form {
-                display: flex;
-                 flex-direction: column;
-                align-items: center;
-                margin-top: 20px;
-            }
-            input[type="email"] {
-                padding: 10px;
-                margin-bottom: 10px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                font-size: 16px;
-                width: 300px;
-                max-width: 100%;
-            }
-            button[type="submit"] {
-                padding: 10px 20px;
-                background-color: #15cff4;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-            button[type="submit"]:hover {
-                background-color: #0da9c2;
-            }
-            .error-message {
-                color: red;
-                margin-top: 10px;
-            }
-        </style>
-        <h1>Forgot Password?</h1>
-        <p>Please enter your email address to reset your password:</p>
-        <form id="resetForm" action="Config.php" method="POST">
-            <input type="email" name="email" required>
-            <button type="submit" name="enterOtp">Reset Password</button>
-            <div id="errorMessage" class="error-message" style="display: none;"></div>
-        </form>
-          
-    `);
-});
-
-
-
-function displayCategoryWindow(category,t) {
+function displayCategoryWindow(category) {
   const categoryOptions = {
     category1: 'Cats',
     category2: 'Dogs',
@@ -183,11 +89,8 @@ function displayCategoryWindow(category,t) {
   image.src = `${categoryFolder}/image${i}.jpg`;
   
   image.addEventListener('click', () => {
-      openFragmentedWindow(image.src, newWindow,t);
+      openFragmentedWindow(image.src, newWindow);
       simg.push(i);
-      if(t=="Up")
-      document.getElementById("imgno").value=simg[0];
-      else
       document.getElementById("imgnoA").value=simg[0];
 
     });
@@ -269,9 +172,6 @@ newWindow.document.write(`
 
   const wrapper = newWindow.document.getElementById('wrapper');
   const selectedGrids = []; 
-  // const wrapper = newWindow.document.querySelector('.wrapper');
-  // const grid1Input = newWindow.document.getElementById('grid1');
-  // const grid2Input = newWindow.document.getElementById('grid2');
   const img = new Image();
   img.src = imageSrc;
   img.onload = function() {
@@ -310,15 +210,8 @@ newWindow.document.write(`
             tickMark.innerHTML = '&#10004;';
             currentGrid.appendChild(tickMark);
             selectedGrids.push(currentGrid);
-            if(t=="Up")
             document.getElementById("grid1").value=selectedGrids[0].id;
-            else
-            document.getElementById("grid1A").value=selectedGrids[0].id;
-            if(t=="Up")
             document.getElementById("grid2").value=selectedGrids[1].id;
-            else
-            document.getElementById("grid2A").value=selectedGrids[1].id;
-
           }
         });
         wrapper.appendChild(element);

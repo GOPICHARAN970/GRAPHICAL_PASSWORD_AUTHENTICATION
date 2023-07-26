@@ -8,7 +8,6 @@
         <title>Login and Registration Form....</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     </head>
 	<body>
@@ -63,7 +62,7 @@
             <div class="form-wrapper sign-up">
                 <form method="POST">
                     <h2>Sign Up</h2>
-                    <div class="input-group" >
+                    <div class="input-group">
                         <input type="text" required name="username">
                         <label for="">Username</label>
                     </div>
@@ -110,7 +109,6 @@
             </div>                  
         </div>
         
-        <script src="script.js">
-</script>
+        <script src="script.js"></script>
 	</body>
 </html>
