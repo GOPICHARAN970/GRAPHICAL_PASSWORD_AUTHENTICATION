@@ -1,6 +1,5 @@
 <?php 
 include 'Config.php';
-
 if (isset($_POST['verifyme'])) {
     // Concatenate the entered OTP digits
     $enteredOtp = $_POST['otp1'] . $_POST['otp2'] . $_POST['otp3'] . $_POST['otp4'] . $_POST['otp5'];
@@ -20,7 +19,9 @@ if (isset($_POST['verifyme'])) {
     if ($enteredOtp === $storedOtp) {
         // Entered OTP matches the stored OTP
         // Redirect to ResetPswd.php with the email value
-        header("Location: ResetPswd.php");
+        echo  '<script>
+                window.open("ResetPswd.php");
+              </script>';
         exit();
     } else {
         // Entered OTP does not match the stored OTP
@@ -46,13 +47,15 @@ if (isset($_POST['verifyme'])) {
       </header>
       <h4>Enter OTP Code</h4>
       <form method="POST">
-    <input type="number" id="otp1" name="otp1" required/>
-    <input type="number" id="otp2" name="otp2" required disabled />
-    <input type="number" id="otp3" name="otp3" required disabled />
-    <input type="number" id="otp4" name="otp4" required disabled />
-    <input type="number" id="otp5" name="otp5" required disabled />
-    <button type="submit" id="verifyBtn" name="verifyme">Verify OTP</button>
-  </form>
+        <div class="input-field">
+          <input type="number" name="otp1" id="otp1" min="0" max="9" required/>
+          <input type="number" name="otp2" id="otp2" min="0" max="9" required/>
+          <input type="number" name="otp3" id="otp3" min="0" max="9" required/>
+          <input type="number" name="otp4" id="otp4" min="0" max="9" required/>
+          <input type="number" name="otp5" id="otp5" min="0" max="9" required/>
+        </div>
+        <button type="submit" id="verifyBtn" name="verifyme">Verify OTP</button>
+      </form>
     </div>
     <script>
       const inputs = document.querySelectorAll("input");
@@ -95,15 +98,6 @@ if (isset($_POST['verifyme'])) {
       });
 
       window.addEventListener("load", () => inputs[0].focus());
-      // verifyBtn.addEventListener("click", (e) => {
-      //   e.preventDefault();
-      //   const isAllInputsFilled = Array.from(inputs).every((input) => input.value !== "");
-      //   if (isAllInputsFilled) {
-      //     window.open("ResetPswd.php");
-      //     window.close();
-      //   }
-      // }
-      // );
     </script>
   </body>
 </html>

@@ -1,7 +1,21 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
 include 'Config.php';
-?>
 
+// Logout functionality
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+// Check if the user is logged in, if not redirect to login.php
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +29,14 @@ include 'Config.php';
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 </head>
 
-<body>
+<body class="body-db">
     <div class="contatiner">
+        <div class="logout-btn">
+            <form action="" method="post">
+                <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+            </form>
+        </div>
     <h1>Display of Applications</h1>
-        <!-- &nbsp <button class="btn btn-primary my-5"><a href="user.php" class="text-light">add user</a></button> -->
         <table class="table">
             <thead>
                 <tr>

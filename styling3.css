@@ -1,0 +1,119 @@
+.body-db {
+    font-family: Arial, sans-serif;
+     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRglZ9clF9YlwkfdkVRATp-1-3YWRaS45q5wZUGuis4msBl6v9bAKje9LkZKRopzLVD2cY&usqp=CAU");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+ }
+ 
+ .container {
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 20px;
+     background-color: #fff;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+     border-radius: 5px;
+ }
+ 
+ h1 {
+     text-align: center;
+     margin-bottom: 30px;
+     color: darkgrey;
+ }
+ 
+ .table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-bottom: 50px;
+ }
+ 
+ .table th,
+ .table td {
+     padding: 12px;
+     border-bottom: 1px solid #ddd;
+     color: honeydew;
+ }
+ 
+ .table th {
+     background-color: #f2f2f2;
+     color: #333;
+     text-align: left;
+ }
+ 
+ .table td {
+     text-align: left;
+ }
+ 
+ .table tr:last-child td {
+     border-bottom: none;
+ }
+ 
+ .btn {
+     padding: 8px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ 
+ .btn-danger {
+     background-color: #dc3545;
+     color: #fff;
+     border: none;
+ }
+ 
+ .btn-danger:hover {
+     background-color: #c82333;
+ }
+ 
+ .btn a {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ .btn a:hover {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ .add-user-btn {
+     margin-bottom: 20px;
+     text-align: right;
+ }
+ 
+ .add-user-btn a {
+     display: inline-block;
+     background-color: #007bff;
+     color: #fff;
+     padding: 10px 20px;
+     border-radius: 5px;
+     text-decoration: none;
+ }
+ 
+ .add-user-btn a:hover {
+     background-color: #0056b3;
+ }
+ 
+ /* Logout Button Styles */
+ .logout-btn {
+     display: flex;
+     justify-content: right;
+     margin-right: 20px;
+     margin-top : 20px;
+     margin-bottom: 20px;
+ }
+ 
+ .logout-btn button {
+     background-color: #274;
+     color: #fff;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ 
+ .logout-btn button:hover {
+     background-color: #555;
+ }
+ 
+ 
+ 

@@ -1,10 +1,11 @@
 const wrapper = document.querySelector('.wrapper');
-const ResetCategory = document.querySelector('.form-wrapper.reset-pswd select');
+const signInCategory = document.querySelector('.form-wrapper.sign-in select');
 
-ResetCategory.addEventListener('change', () => {
-    const selectedCategory = ResetCategory.value;
+signInCategory.addEventListener('change', () => {
+    const selectedCategory = signInCategory.value;
     displayCategoryWindow(selectedCategory);
 });
+
 
 
 function displayCategoryWindow(category) {
@@ -210,8 +211,13 @@ newWindow.document.write(`
             tickMark.innerHTML = '&#10004;';
             currentGrid.appendChild(tickMark);
             selectedGrids.push(currentGrid);
-            document.getElementById("grid1").value=selectedGrids[0].id;
-            document.getElementById("grid2").value=selectedGrids[1].id;
+            // Check if two grids are selected, and if yes, compare their IDs as integers
+      if (selectedGrids.length === 2) {
+        const grid1ID = parseInt(selectedGrids[0].id, 10);
+        const grid2ID = parseInt(selectedGrids[1].id, 10);
+        document.getElementById('grid1A').value = grid1ID;
+        document.getElementById('grid2A').value = grid2ID;
+      }
           }
         });
         wrapper.appendChild(element);

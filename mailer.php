@@ -10,8 +10,8 @@ function sendOTP($email, $otp)
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; // Your SMTP host
     $mail->SMTPAuth = true;
-    $mail->Username = 'gdanthoju@gmail.com'; // Your SMTP username
-    $mail->Password = 'ofjjrjcepoykuvep'; // Your SMTP password
+    $mail->Username = 'cse20733076@matrusri.edu.in'; // Your SMTP username
+    $mail->Password = 'ygpqovebqhtwpnuo'; // Your SMTP password
     $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587; // TCP port to connect to
 
